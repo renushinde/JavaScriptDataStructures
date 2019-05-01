@@ -116,3 +116,63 @@ function min(array){
 }
 
 console.log(min([5, 1, 4, 7, 1, 2]));
+
+// Reverse a string (Using built in methods)
+function reverseString (str){
+  let newStr = str.split("").reverse().join("");
+
+  return newStr;
+
+}
+console.log(reverseString("hello"));
+
+// Reverse a string using for loop
+function reverseAString (str) {
+  let finalStr = "";
+  for ( let i = str.length-1; i>=0; i--) {
+   // console.log(str[i]);
+   finalStr = finalStr + str[i];
+  }
+  return finalStr;
+}
+console.log(reverseAString("Hello"));
+
+// Factorialise a number
+
+function factorial (num) {
+  var result =1;
+  if (num === 0 || num ===1) {
+    return 1;
+  }
+  for( let i=1; i<=num; i++){
+    result *= i
+  }
+  return result;
+}
+console.log(factorial(1));
+
+// Countdown numbers
+
+function countDown(num) {
+   if (num === 0) {  // base condition
+    return;
+  } else {
+   console.log(num);
+   countDown(num-1);
+  }
+}
+console.log(countDown(10));
+
+// Palindrome check
+function palindrome(str) {
+  let regEx = /[\W_]/g; // non alphanumeric characters
+  let regExLowcaseStr = str.toLowerCase().replace(regEx, "");
+  let reverStr = regExLowcaseStr.split("").reverse().join("");
+
+  if (reverStr === regExLowcaseStr) return true;
+  return false;
+}
+
+
+
+console.log(palindrome("race car"));
