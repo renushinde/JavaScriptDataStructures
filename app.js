@@ -172,7 +172,20 @@ function palindrome(str) {
   if (reverStr === regExLowcaseStr) return true;
   return false;
 }
-
-
-
 console.log(palindrome("race car"));
+
+// Longest word in a string
+
+function findLongestWordLength(str) {
+ let wordArray = str.split(" ");
+   //console.log(wordArray);
+  let longest = "";
+  for ( let i=0; i< wordArray.length; i++) {
+    if (wordArray[i].length > longest) {
+      longest = wordArray[i].length;
+    }
+  }
+  return longest;
+}
+
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
